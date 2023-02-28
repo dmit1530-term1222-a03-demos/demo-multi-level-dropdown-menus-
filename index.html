@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space is the Place | Dropdown Menu Demo</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="inner-container flex-container">
+            <img class="logo" src="img/alien-logo.svg" alt="Cartoon Microbe logo"/>
+            <h1 class="sr-only">Space is the Place</h1>
+
+            <nav>
+                <ul class="menu flex-container">
+                    <!-- first tier -->
+                    <li><a href="#">This is Home</a></li>
+                    <!-- first tier-->
+                    <li>
+                        <a href="#">Evidence of Life <span>&#8964;</span></a>
+                        <!-- dropdown menu | second tier -->
+                        <ul class="dropdown">
+                            <li><a href="">Microbes on Mars</a></li>
+                            <li><a href="">Ice on Europa</a></li>
+                            <li><a href="">Enceladus Candidacy</a></li>
+                        </ul>
+                    </li>
+                    <!-- first tier-->
+                    <li>
+                        <a href="#">Habitable Planets <span>&#8964;</span></a>
+                        <!-- dropdown menu | second tier -->
+                        <ul class="dropdown">
+                            <li><a href="">Planets with Water</a></li>
+                            <li><a href="">Habitable Zones</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Latest Images</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+</body>
+</html>

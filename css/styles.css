@@ -1,0 +1,129 @@
+/* developer styles go here */
+/*font-family: 'Roboto', sans-serif;*/
+
+body {
+    background-color: #08151f;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.125rem;
+}
+
+/** utility classes **/
+.sr-only {
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+}
+
+.inner-container {
+    max-width: 112.5rem;
+    margin: auto;
+    /* padding: 0 1rem; */
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+}
+
+/** header styles **/
+/** Step 1 
+    Style all menu links showing on the smallest screen 
+    Text styling goes on the anchor element to overwrite browser styles. Layout styling goes on the li element
+**/
+header {
+    background: rgba(48,82,111);
+    background: linear-gradient(
+        0deg,
+        rgba(48,82,111,1) 0%,
+        rgba(19,43,63,1) 100%
+    );
+}
+
+.logo {
+    width: 4rem;
+    padding: 0.5rem;
+}
+
+ul.menu a {
+   color: #fff;
+   text-transform: uppercase;
+   text-decoration: none;
+   /** expands the clickable area */
+   display: block; 
+   /** add the padding here vs the li as it will become cliable space too */
+   padding: 1rem;
+    
+}
+
+li a span { display: none; }
+
+ul.dropdown a { padding-left: 3rem; }
+
+ul.menu a:hover,
+ul.menu a:focus {
+    border-left: 0.25rem solid #f7d874;
+}
+
+@media screen and (min-width: 960px) {
+    .flex-container {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    /** only targets the tier one list items **/
+    ul.menu > li {
+        padding-left: 3rem;
+        position: relative;
+    }
+
+    li a span {
+        display: inline-block;
+        padding-left: 0.5rem;
+    }
+
+    /** step 2: Position, style, and hide your dropdown menu **/
+    ul.dropdown {
+        position: absolute;
+        background: #30526f;
+        left: 3rem;
+        /** default state -  hidden **/
+        visibility: hidden;
+        opacity: 0;
+        z-index: 1;
+        /** step 4 add a transition - remove any clunkiness effects, and to delay the hover **/
+        transition: all 0.5s ease;
+    }
+
+    /** step 3 - add a hover state that shows the submenu **/
+    ul.menu li:hover > ul.dropdown,
+    ul.menu li ul.dropdown:hover {
+        visibility: visible;
+        opacity: 1;
+    }
+    ul.dropdown li { 
+        white-space: nowrap; 
+        min-width: 100%;
+    }
+    ul.dropdown a {
+        padding-left: 1rem;;
+    }
+
+    ul.menu a,
+    ul.menu a:hover,
+    ul.menu a:focus{
+        border-left: unset;
+    }
+    ul.menu a:hover,
+    ul.menu a:focus {
+        color: #f7d874;     
+    }
+
+    /** Step 5: keyboard accessibility **/
+    ul.menu li:focus-within > ul,
+    ul.menu li > ul:focus {
+        visibility: visible;
+        opacity: 1;
+        display: block;
+    }
+
+}
